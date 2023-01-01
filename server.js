@@ -1,12 +1,13 @@
 var fs = require('fs');
-var Stores = fs.readFileSync('Stores.json');
 
-console.log(Stores);
+var StoreData = fs.readFileSync('Stores.json');
 
-//console.log('Staring Server');
+var Stores = JSON.parse(StoreData);
 
-const { response, request } = require('express');
+console.log('Staring Server');
+
 var express = require('express');
+const { finished } = require('stream');
 
 var app = express();
 
@@ -26,18 +27,27 @@ function AddToBox(request, response) {
     var Item = data.Item;
     var Num = Number(data.Num);
     if (!Num) {
+
         var reply = {
             msg: "Number of items is required."
         }
+        response.send(reply);
     } else {
 
         Stores[Item] = Num;
+        var data = JSON.stringify(Stores, null, 2);
+        fs.writeFile('Stores.json', data, finished);
 
-        var reply = {
-            msg: "Has been added to stores."
-        }
+            function finished(err) {
+                console.log('all set.');
+                reply = {
+                    Word: Item,
+                    Number: Num,
+                    Status: "Success!"
+                }
+                response.send(reply);
+            }
     }
-    response.send(reply); 
 }
 
 app.get('/all', sendStores);
