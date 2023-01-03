@@ -32,14 +32,7 @@ function AddToBox(request, response) {
             msg: "Number of items is required."
         }
         response.send(reply);
-    } 
-    if (!Loc) {
-
-        var reply = {
-            msg: "Location of items is required."
-        }
-        response.send(reply);
-    }else {
+    } else {
 
         Stores[Item] = Num;
         var data = JSON.stringify(Stores, null, 2);
