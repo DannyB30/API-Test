@@ -26,29 +26,31 @@ function AddToBox(request, response) {
     var data = request.params;
     var Item = data.Item;
     var Num = Number(data.Num);
-    if (!Num) {
+
+    Stores[Item] = Num;
+        var data = JSON.stringify(Stores, null, 2);
+        fs.writeFile('Stores.json', data, finished);
+
+            function finished(err) {
+                console.log('Incomming ');
+                var reply = {
+                    Status: 'Success',
+                    Item: Item,
+                    Quantity: Num
+                }
+                
+                response.send(reply);
+                console.log(reply);
+            }
+}
+
+    /*if (!Num) {
 
         var reply = {
             msg: "Number of items is required."
         }
         response.send(reply);
-    } else {
-
-        Stores[Item] = Num;
-        var data = JSON.stringify(Stores, null, 2);
-        fs.writeFile('Stores.json', data, finished);
-
-            function finished(err) {
-                console.log(+ data + ' all set.');
-                var reply = {
-                    Status: 'Success',
-                    Item: Item 
-                }
-                
-                response.send(reply);
-            }
-    }
-}
+    } else {*/
 
 app.get('/all', sendStores);
 
@@ -61,11 +63,14 @@ app.get('/search/:Item/', InsideBox);
 function InsideBox(request, response) {
     var Item = request.params.Item;
     var reply;
+    console.log('Someone be snoopin');
     if (Stores[Item]) {
 
         reply = {
             Status: 'found', Item: Item, Number: Stores[Item],
         }
+
+        console.log(reply);
 
     } else {
 
@@ -73,7 +78,8 @@ function InsideBox(request, response) {
             Status: 'Not Found',
             Item: Item
         }
-         
+        
+        console.log('Dead');
     }
     
     response.send(reply);
