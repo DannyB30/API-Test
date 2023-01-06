@@ -1,4 +1,8 @@
 {
-  "WillToLive": 1
-  
+  "WillToLive": 1,
+  "book": 10,
+  "coke": 100,
+  "pencil": 5,
+  "Pen": 2,
+  "pain": 5
 }

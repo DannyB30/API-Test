@@ -39,12 +39,12 @@ function AddToBox(request, response) {
         fs.writeFile('Stores.json', data, finished);
 
             function finished(err) {
-                console.log('all set.');
-                reply = {
-                    Word: Item,
-                    Number: Num,
-                    Status: "Success!"
+                console.log(+ data + ' all set.');
+                var reply = {
+                    Status: 'Success',
+                    Item: Item 
                 }
+                
                 response.send(reply);
             }
     }
