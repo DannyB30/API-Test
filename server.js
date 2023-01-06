@@ -19,7 +19,11 @@ function listening() {
 
 app.use(express.static('Room'));
 
+//All get commands
 app.get('/Add/:Item/:Num?', AddToBox);
+app.get('/all', sendStores);
+app.get('/search/:Item/', InsideBox);
+app.get('/Ping', Poggers);
 
 
 function AddToBox(request, response) {
@@ -44,21 +48,9 @@ function AddToBox(request, response) {
             }
 }
 
-    /*if (!Num) {
-
-        var reply = {
-            msg: "Number of items is required."
-        }
-        response.send(reply);
-    } else {*/
-
-app.get('/all', sendStores);
-
 function sendStores(request, response) {
     response.send(Stores);
 }
-
-app.get('/search/:Item/', InsideBox);
 
 function InsideBox(request, response) {
     var Item = request.params.Item;
