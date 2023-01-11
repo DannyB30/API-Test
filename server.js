@@ -1,6 +1,6 @@
 var fs = require('fs');
 
-var StoreData = fs.readFileSync('Stores.json');
+var StoreData = fs.readFileSync('MainStorage.Json');
 
 var Stores = JSON.parse(StoreData);
 
