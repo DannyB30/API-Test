@@ -1,0 +1,48 @@
+{
+    "Box-A":{
+        "A1":{
+            "Status":1,
+            "M3 Bolt":10
+        },
+        "A2":{
+            "Status":1,
+            "M3 Nuts":10
+        },
+        "A3":{
+            "Status":0
+        },
+        "B1":{
+            "Status":1,
+            "Spare Knife Blade":3
+        },
+        "B2":{
+            "Status":0
+        },
+        "B3":{
+            "Status":0
+        }
+    },
+
+    "Box-B":{
+        "A1":{
+            "Status":1,
+            "M3 Bolt":5
+        },
+        "A2":{
+            "Status":1,
+            "M3 Nuts":5
+        },
+        "A3":{
+            "Status":0
+        },
+        "B1":{
+            "Status":0
+        },
+        "B2":{
+            "Status":0
+        },
+        "B3":{
+            "Status":0
+        }
+    }    
+}
