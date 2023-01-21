@@ -76,3 +76,14 @@ function InsideBox(request, response) {
     
     response.send(reply);
 }
+
+function Poggers(request, response) {
+
+    reply = {
+        Pogchamp
+    }
+
+    response.send(reply);
+    console.log('ping');
+
+}
