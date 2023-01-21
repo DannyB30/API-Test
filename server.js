@@ -1,4 +1,5 @@
 var fs = require('fs');
+var express = require('express');
 
 var StoreData = fs.readFileSync('MainStorage.Json');
 
@@ -6,7 +7,6 @@ var Stores = JSON.parse(StoreData);
 
 console.log('Staring Server');
 
-var express = require('express');
 const { finished } = require('stream');
 
 var app = express();
