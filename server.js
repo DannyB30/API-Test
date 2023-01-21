@@ -1,9 +1,11 @@
 var fs = require('fs');
-var express = require('express');
+var express = require('http');
 
 var StoreData = fs.readFileSync('MainStorage.Json');
 
 var Stores = JSON.parse(StoreData);
+
+var port = (8080);
 
 console.log('Staring Server');
 
@@ -11,10 +13,10 @@ const { finished } = require('stream');
 
 var app = express();
 
-var Server = app.listen(3000, listening);
+var Server = app.listen(port, listening);
 
 function listening() {
-    console.log("listening port 3000......");
+    console.log("listening port ", port, "......");
 }
 
 app.use(express.static('Room'));
