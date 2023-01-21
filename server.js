@@ -23,7 +23,7 @@ app.use(express.static('Room'));
 app.get('/Add/:Item/:Num?', AddToBox);
 app.get('/all', sendStores);
 app.get('/search/:Item/', InsideBox);
-app.get('/Ping', Poggers);
+app.get('/Ping', Pogges);
 
 
 function AddToBox(request, response) {
@@ -36,7 +36,7 @@ function AddToBox(request, response) {
         fs.writeFile('Stores.json', data, finished);
 
             function finished(err) {
-                console.log('Incomming ');
+                console.log('Incoming ');
                 var reply = {
                     Status: 'Success',
                     Item: Item,
@@ -55,7 +55,7 @@ function sendStores(request, response) {
 function InsideBox(request, response) {
     var Item = request.params.Item;
     var reply;
-    console.log('Someone be snoopin');
+    console.log('Someone be snooping');
     if (Stores[Item]) {
 
         reply = {
@@ -77,7 +77,7 @@ function InsideBox(request, response) {
     response.send(reply);
 }
 
-function Poggers(request, response) {
+function Pogges(request, response) {
 
     reply = {
         Pogchamp
