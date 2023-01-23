@@ -16,7 +16,7 @@ var app = express();
 var Server = app.listen(port, listening);
 
 function listening() {
-    console.log("listening port ", port, "......");
+    console.log("listening port ", port);
 }
 
 app.use(express.static('Room'));
@@ -62,7 +62,7 @@ function InsideBox(request, response) {
     if (Stores[Item]) {
 
         reply = {
-            Status: 'found', Item: Item, Number: Stores[Item],
+            Status: 'found', Item: Item, Info: Stores[Item],
         }
 
         console.log(reply);
