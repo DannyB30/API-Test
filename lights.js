@@ -60,7 +60,7 @@ function colourTime(request, response) {
 
 }
 function Setting(request, response) {
-    response.send(lighty);
+    response.send(Lighty);
 }
 
 function Ping(request, response) {
