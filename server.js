@@ -5,7 +5,7 @@ var StoreData = fs.readFileSync('MainStorage.Json');
 
 var Stores = JSON.parse(StoreData);
 
-var port = (8080);
+var port = (3000);
 
 console.log('Staring Server');
 
@@ -22,7 +22,7 @@ function listening() {
 app.use(express.static('Room'));
 
 //All get commands
-app.get('/Add/:Item/:Num?', AddToBox);
+app.get('/Add/:Loc/:Item/:Num?', AddToBox);
 app.get('/all', sendStores);
 app.get('/search/:Item/', InsideBox);
 app.get('/Ping', Pogges);
@@ -30,6 +30,7 @@ app.get('/Ping', Pogges);
 
 function AddToBox(request, response) {
     var data = request.params;
+    var Loc = data.Loc;
     var Item = data.Item;
     var Num = Number(data.Num);
 

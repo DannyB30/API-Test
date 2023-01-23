@@ -1,60 +1,11 @@
 {
-    "Box-A":{
-        "A1":{
-            "Status":1,
-            "Date":"11/01/22.17:15",
-            "M3 Bolt":10
-        },
-        "A2":{
-            "Status":1,
-            "Date":"11/01/22.17:15",
-            "M3 Nuts":10
-        },
-        "A3":{
-            "Status":0,
-            "Date":"N/a"
-        },
-        "B1":{
-            "Status":1,
-            "Date":"11/01/22.17:15",
-            "Spare Knife Blade":3
-        },
-        "B2":{
-            "Status":0,
-            "Date":"N/a"
-        },
-        "B3":{
-            "Status":0,
-            "Date":"N/a"
-        }
+    "A1" : {
+    "Status":1,
+    "Dispare":100,
+    "M3":10
     },
 
-    "Box-B":{
-        "A1":{
-            "Status":1,
-            "Date":"11/01/22.17:15",
-            "M3 Bolt":5
-        },
-        "A2":{
-            "Status":1,
-            "Date":"11/01/22.17:15",
-            "M3 Nuts":5
-        },
-        "A3":{
-            "Status":0,
-            "Date":"N/a"
-        },
-        "B1":{
-            "Status":0,
-            "Date":"N/a"
-        },
-        "B2":{
-            "Status":0,
-            "Date":"N/a"
-        },
-        "B3":{
-            "Status":0,
-            "Date":"N/a"
-        }
-    }    
+    "A2": {
+        "Status":0
+    }
 }
