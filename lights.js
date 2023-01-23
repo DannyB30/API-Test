@@ -59,6 +59,10 @@ function colourTime(request, response) {
 
 
 }
+function Setting(request, response) {
+    response.send(lighty);
+}
+
 function Ping(request, response) {
     response.send('Pong!!!!!!');
 }
